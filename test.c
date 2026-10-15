@@ -1,12 +1,10 @@
-static int myphy_config_init(struct phy_device *phydev) {
-    phy_write(phydev, 0x1f, 0x0007);
-    phy_write(phydev, 0x10, 0x1234);
-    return 0;
+// syscall.c — 커널의 시스템콜 처리
+void syscall_handler(/* 저장한 레지스터 정보 */)
+{
+    // 개념 예시
+    switch (요청번호) {
+    case 1:
+        uart_putchar(전달받은문자);
+        break;
+    }
 }
-
-static struct phy_driver myphy_driver = {
-    .phy_id = 0x001cc915,
-    .phy_id_mask = 0xfffffff0,
-    .name = "My PHY",
-    .config_init = myphy_config_init,
-};
